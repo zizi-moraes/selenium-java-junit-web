@@ -32,9 +32,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Build with Maven
-        run: |
-          mvn -B clean verify &
-          sleep 10
+        run: mvn -B clean verify
 
       - name: Run Tests
         run: mvn test
