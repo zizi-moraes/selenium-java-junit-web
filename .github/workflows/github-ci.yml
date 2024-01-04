@@ -22,14 +22,12 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: Download and set up ChromeDriver
+      - name: Install Google Chrome
         run: |
-          CHROME_VERSION=$(google-chrome --version | awk '{print $NF}' | cut -d '.' -f 1)
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-          wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/google-chrome-archive-keyring.gpg arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install google-chrome-stable=120.0.6099.199
 
       - name: Cache Maven dependencies
         uses: actions/cache@v2
