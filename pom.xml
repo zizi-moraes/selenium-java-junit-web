@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.soucedemo.projetoWeb</groupId>
-    <artifactId>selenium-java-web</artifactId>
+    <artifactId>projetoWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
