@@ -24,9 +24,9 @@ jobs:
 
       - name: Install ChromeDriver
         run: |
-          wget -O chromedriver.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chrome-linux64.zip
+          wget -O https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chrome-linux64.zip
           sudo unzip chromedriver.zip -d /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin
 
       - name: Cache the Maven packages to speed up build
         uses: actions/cache@v1
