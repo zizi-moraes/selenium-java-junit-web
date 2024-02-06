@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Testes automatizados da funcionalidade SignUp")
-public class AuthenticationTests {
+public class AuthenticationTest {
     private static WebDriver driver;
 
     @BeforeAll
