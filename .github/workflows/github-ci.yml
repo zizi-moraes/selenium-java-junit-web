@@ -22,12 +22,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Set ChromeDriver Version
-        run: export CHROMEDRIVER_VERSION="121.0.6167.85"
-
       - name: Install ChromeDriver
         run: |
-          wget -O chromedriver.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROMEDRIVER_VERSION/linux64/chrome-linux64.zip
+          wget -O chromedriver.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chrome-linux64.zip
           sudo unzip chromedriver.zip -d /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
 
