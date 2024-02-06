@@ -24,10 +24,11 @@ jobs:
 
       - name: Install Google Chrome
         run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome-archive-keyring.gpg
-          echo "deb [signed-by=/usr/share/keyrings/google-chrome-archive-keyring.gpg arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list > /dev/null
-          sudo apt-get update
-          sudo apt-get install google-chrome-stable
+          CHROMEDRIVER_VERSION="120.0.6099.199"
+          wget -q "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -O chromedriver.zip
+          unzip chromedriver.zip
+          chmod +x chromedriver
+          sudo mv chromedriver /usr/local/bin/
 
       - name: Cache the Maven packages to speed up build
         uses: actions/cache@v1
