@@ -40,4 +40,4 @@ jobs:
         run: mvn -B clean verify
 
       - name: Run Tests
-        run: mvn test -X
+        run: mvn test
