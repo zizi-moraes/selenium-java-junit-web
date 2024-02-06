@@ -24,7 +24,7 @@ jobs:
 
       - name: Install ChromeDriver
         run: |
-          wget -O https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chrome-linux64.zip
+          wget -O chromedriver.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chrome-linux64.zip
           sudo unzip chromedriver.zip -d /usr/local/bin/
           sudo chmod +x /usr/local/bin
 
