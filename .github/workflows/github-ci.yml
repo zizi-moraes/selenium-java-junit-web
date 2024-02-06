@@ -22,13 +22,14 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Install Google Chrome
+      - name: Set ChromeDriver Version
+        run: export CHROMEDRIVER_VERSION="120.0.6099.199"
+
+      - name: Install ChromeDriver
         run: |
-          CHROMEDRIVER_VERSION="120.0.6099.199"
-          wget -q "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -O chromedriver.zip
-          unzip chromedriver.zip
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
+          wget -O chromedriver.zip https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          sudo unzip chromedriver.zip -d /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
 
       - name: Cache the Maven packages to speed up build
         uses: actions/cache@v1
