@@ -15,7 +15,7 @@ public class AuthenticationTest {
 
     @BeforeAll
     public static void setUp() {
-        WebDriverManager.chromedriver().browserVersion("120.0.6099.199").setup();
+        WebDriverManager.chromedriver().browserVersion("121.0.6167.85").setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
